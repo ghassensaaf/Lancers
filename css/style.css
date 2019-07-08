@@ -609,6 +609,7 @@ body.mobile-nav-active #mobile-nav-toggle
 #featured-services .box
 {
   padding: 30px 20px;
+  text-align:center;
 }
 
 #featured-services .box-bg
