@@ -70,13 +70,16 @@
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
       $('#header').addClass('header-scrolled');
+      $('#mobile-nav-toggle').addClass('mobile-nav-toggle-scrolled');
     } else {
+      $('#mobile-nav-toggle').removeClass('mobile-nav-toggle-scrolled');
       $('#header').removeClass('header-scrolled');
     }
   });
 
   if ($(window).scrollTop() > 100) {
     $('#header').addClass('header-scrolled');
+    $('#mobile-nav-toggle').addClass('mobile-nav-toggle-scrolled');
   }
 
   // Smooth scroll for the menu and links with .scrollto classes
