@@ -452,6 +452,11 @@ h6
   color: #fff;
 }
 
+#header.header-scrolled #mobile-nav-toggle i
+{
+  color: #080808;
+}
+
 /* Mobile Nav Styling */
 
 #mobile-nav
