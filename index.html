@@ -19,11 +19,36 @@
 
   </head>
   <body>
+    <!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v8.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your Chat Plugin code -->
+      <div class="fb-customerchat"
+        attribution=setup_tool
+        page_id="103367761518107"
+        theme_color="#e01e39">
+      </div>
     <header id="header" class="border-bottom border-secondary">
       <div class="container-fluid">
 
       <div id="logo" class="pull-left">
-        <img width="32px"style="margin-bottom: 15px; margin-right: 5px;" src="img/favicon.png">
+        <img width="28px"style="margin-bottom: 15px; margin-right: 5px;" src="img/favicon.png">
         <h1 style="display: inline-block;"><a href="#intro" class="scrollto">Lancers</a></h1>
       </div>
 
@@ -34,8 +59,8 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#team">Equipe</a></li>
           <li><a href="#contact">Nous Contacter</a></li>
-          <li><a href="#contact">Nos Projets</a></li>
-          <li><a href="#contact">Blog</a></li>
+          <!-- <li><a href="#contact">Nos Projets</a></li>
+          <li><a href="#contact">Blog</a></li> -->
         </ul>
       </nav>
     </div>
@@ -388,29 +413,39 @@ Notre agence est force de proposition et s'appuie sur des technologies fiables e
           </div>
 
           <div class="form">
-            <div id="sendmessage">Your message has been sent. Thank you!</div>
-            <div id="errormessage"></div>
-            <form action="contactform/contactform.php" method="post" role="form" class="contactForm">
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group col-md-6">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                  <div class="validation"></div>
+            <form role="form" id="contactForm" class="contact-form" data-toggle="validator" class="shake">
+              <div class="form-group">
+                <div class="controls">
+                  <input type="text" id="name" class="form-control" placeholder="Nom Complet" minlength="4" required data-error="Veuiller entrer votre nom">
+                  <div class="help-block with-errors"></div>
                 </div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                <div class="validation"></div>
+                <div class="controls">
+                  <input type="email" class="email form-control" id="email" placeholder="Email" required data-error="Veuiller entrer votre email">
+                  <div class="help-block with-errors"></div>
+                </div>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                <div class="validation"></div>
+                <div class="controls">
+                  <input type="text" id="msg_subject" class="form-control" placeholder="Sujet" minlength="6" required data-error="Veuiller entrer le sujet de votre message(minimum 6 caractère)">
+                  <div class="help-block with-errors"></div>
+                </div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="form-group">
+                <div class="controls">
+                  <textarea id="message" rows="7" placeholder="Massage" class="form-control" minlength="20" required data-error="Entrer votre message(20 caractère au mininmum)"></textarea>
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+
+              <button type="submit" id="submit" class="btn btn-success"></i> Send Message</button>
+              <div id="msgSubmit" class="h5 text-center hidden"></div>
+              <div class="clearfix"></div>
+
             </form>
+
+
           </div>
 
         </div>
@@ -486,7 +521,8 @@ Notre agence est force de proposition et s'appuie sur des technologies fiables e
       <script src="lib/touchSwipe/jquery.touchSwipe.min.js"></script>
 
       <!-- Contact Form JavaScript File -->
-      <script src="contactform/contactform.js"></script>
+     	<script type="text/javascript" src="assets/js/form-validator.min.js"></script>
+    	<script type="text/javascript" src="assets/js/contact-form-script.js"></script>
 
       <!-- Main Javascript File -->
       <script src="js/main.js"></script>
