@@ -342,6 +342,7 @@ h6
 
 #nav-menu-container
 {
+  height: :48px;
   float: right;
   margin: 0;
 }
@@ -350,7 +351,7 @@ h6
 
 .nav-menu a
 {
-  padding: 0 8px 10px 8px;
+  padding: 0px 16px 32px 16px;
   text-decoration: none;
   display: inline-block;
   color: #fff;
@@ -1274,9 +1275,19 @@ body.mobile-nav-active #mobile-nav-toggle
 }
 .carous
 {
-  background-image: url("../img/blog.jpg");
+  background-image: url("../img/blog.jpg") ;
   background-size: cover;
   height: 600px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom right;
+}
+#blog
+{
+  background: url("../img/blog-bg.jpg") center top no-repeat fixed;
+  background-size: cover;
+  padding: 60px 0 40px 0;
+  position: relative;
 }
 /*--------------------------------------------------------------
 # Blog
@@ -1289,6 +1300,7 @@ body.mobile-nav-active #mobile-nav-toggle
   padding: 30px;
   margin-bottom: 60px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  background-color: white;
 }
 
 .blog .entry .entry-img {
@@ -1622,16 +1634,21 @@ body.mobile-nav-active #mobile-nav-toggle
 }
 
 .blog .blog-pagination {
-  color: #444444;
+  color: #e01e39;
+  border-radius:25%;
 }
 
 .blog .blog-pagination ul {
+  border-radius:25%;
   display: flex;
   padding-left: 0;
   list-style: none;
 }
 
 .blog .blog-pagination li {
+  color: #e01e39;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius:25%;
   border: 1px solid white;
   margin: 0 5px;
   transition: 0.3s;
@@ -1639,15 +1656,18 @@ body.mobile-nav-active #mobile-nav-toggle
 
 .blog .blog-pagination li.active {
   background: white;
+  border-radius:25%;
 }
 
 .blog .blog-pagination li a {
-  color: #b4aca8;
-  padding: 7px 16px;
+  border-radius:25%;
+  color: #e01e39;
+  padding: 10px 16px;
   display: inline-block;
 }
 
 .blog .blog-pagination li.active, .blog .blog-pagination li:hover {
+  border-radius:25%;
   background: #e01e39;
   border: 1px solid #e01e39;
   border-radius: 4px;
@@ -1655,14 +1675,17 @@ body.mobile-nav-active #mobile-nav-toggle
 
 .blog .blog-pagination li.active a, .blog .blog-pagination li:hover a {
   color: #fff;
+  border-radius:25%;
 }
 
 .blog .blog-pagination li.disabled {
   background: #fff;
+  border-radius:25%;
   border: 1px solid white;
 }
 
 .blog .blog-pagination li.disabled i {
+  border-radius:25%;
   color: #f6f5f5;
   padding: 10px 16px;
   display: inline-block;
@@ -1672,6 +1695,7 @@ body.mobile-nav-active #mobile-nav-toggle
   padding: 30px;
   margin: 0 0 60px 20px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  background-color: white;
 }
 
 .blog .sidebar .sidebar-title {

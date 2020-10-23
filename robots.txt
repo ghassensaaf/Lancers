@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: 
+Crawl-delay: 10
+Disallow: /cgi-bin/
+Disallow: /assets/
+Disallow: /css/
+Disallow: /img/
+Disallow: /js/
+Disallow: /lib/
